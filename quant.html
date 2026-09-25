@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quant — The Kulturel Files | Alper Kulturel</title>
+<meta name="description" content="Eight quantitative finance projects by Alper Kulturel: Black-Scholes pricing in C++17, a price-time priority order book, an ITCH feed handler, options pricing models, pairs trading and portfolio optimisation.">
+<meta name="author" content="Alper Kulturel">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="canonical" href="https://alper-kulturel.github.io/quant.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Kulturel Files">
+<meta property="og:title" content="Quant — The Kulturel Files">
+<meta property="og:description" content="Pricing, matching, and the machinery of a quote — eight files on how a price is formed and how fast it can be proven.">
+<meta property="og:url" content="https://alper-kulturel.github.io/quant.html">
+<meta property="og:image" content="https://alper-kulturel.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Kulturel Files — the portfolio archive of Alper Kulturel.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quant — The Kulturel Files">
+<meta name="twitter:description" content="Pricing, matching, and the machinery of a quote — eight files on how a price is formed and how fast it can be proven.">
+<meta name="twitter:image" content="https://alper-kulturel.github.io/assets/og.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alper Kulturel",
+  "jobTitle": "Developer & Analyst",
+  "url": "https://alper-kulturel.github.io/",
+  "email": "mailto:kulturelalper@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
+  "sameAs": [
+    "https://github.com/Alper-Kulturel",
+    "https://www.linkedin.com/in/alper-kulturel-951a7421a/"
+  ],
+  "knowsAbout": ["Quantitative Finance", "C++", "Python", "Derivatives Pricing", "Low-Latency Systems"]
+}
+</script>
+</head>
+
+<body class="page--quant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark__pip" aria-hidden="true"></span>
+      Alper Kulturel
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="about.html">About</a>
+      <a class="site-nav__link" href="about.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <header class="page-head shell">
+    <p class="kicker">Folder 01 / 05</p>
+    <h1 class="page-title">Quant</h1>
+    <p class="page-sub">Pricing, matching, and the machinery of a quote &mdash; eight files on how a price is formed, and how fast it can be proven.</p>
+  </header>
+
+  <section class="dossier-section shell" aria-labelledby="dossier-label">
+
+    <h2 class="dossier-section__label" id="dossier-label">Open dossier</h2>
+
+    <div class="dossier">
+
+      <div class="dossier__stage" aria-hidden="true">
+        <div class="dossier__flap"></div>
+      </div>
+
+      <div class="dossier__back">
+        <article class="paper">
+
+          <svg class="paper__clip" viewBox="0 0 40 92" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 22V70a10 10 0 0 0 20 0V18a7 7 0 0 0-14 0v44a3 3 0 0 0 6 0V24"/>
+          </svg>
+
+          <div class="paper__monogram" aria-hidden="true">AK</div>
+          <span class="paper__edge" aria-hidden="true">Folder 01 &mdash; Quant</span>
+
+          <dl class="paper__meta">
+            <div class="meta__item">
+              <dt class="meta__label">Category</dt>
+              <dd class="meta__value">Quantitative Finance</dd>
+            </div>
+            <div class="meta__item">
+              <dt class="meta__label">Stack</dt>
+              <dd class="meta__value">C++17 &middot; Python &middot; pybind11</dd>
+            </div>
+            <div class="meta__item">
+              <dt class="meta__label">Files</dt>
+              <dd class="meta__value">08 items</dd>
+            </div>
+          </dl>
+
+          <p class="paper__lede">Eight files tracing a single question: what a price actually is, and how quickly you can prove it. The work moves between the mathematics of derivatives and the machinery that quotes them &mdash; closed-form Greeks on one side, price&ndash;time priority matching engines and wire-speed market data on the other.</p>
+          <p class="paper__lede paper__lede--plain">Each repository is documented, tested, and pushed with its assumptions stated plainly: what the model holds true, where it breaks, and what the benchmarks measured.</p>
+
+          <div class="files">
+            <div class="files__head">
+              <span>File index</span>
+              <span>08 items</span>
+            </div>
+
+            <ul>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-black-scholes" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">cpp-black-scholes</span>
+                    <span class="file__stack">C++17 &middot; pybind11 &middot; CMake</span>
+                    <span class="file__desc">Analytical option pricer exposing all five Greeks, with implied volatility solved by Newton&ndash;Raphson.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-order-book" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">cpp-order-book</span>
+                    <span class="file__stack">C++17 &middot; pybind11</span>
+                    <span class="file__desc">Price&ndash;time priority matching engine with O(log n) add, O(1) cancel, and partial fills.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-feed-handler" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">cpp-feed-handler</span>
+                    <span class="file__stack">C++17 &middot; pybind11 &middot; ITCH</span>
+                    <span class="file__desc">Low-latency market data parser for the ITCH binary protocol, benchmarked at p50 and p99.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/options-pricing-engine" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">options-pricing-engine</span>
+                    <span class="file__stack">Python &middot; NumPy &middot; SciPy</span>
+                    <span class="file__desc">Black&ndash;Scholes, Monte Carlo, and binomial trees compared side by side, with Greeks and a volatility surface.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/pairs-trading" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">pairs-trading</span>
+                    <span class="file__stack">Python &middot; statsmodels &middot; Plotly</span>
+                    <span class="file__desc">Cointegration-based market-neutral pairs strategy with ADF testing and a full backtest.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/stock-backtesting-engine" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">stock-backtesting-engine</span>
+                    <span class="file__stack">Python &middot; pandas &middot; Plotly</span>
+                    <span class="file__desc">Event-driven backtester covering momentum, mean reversion, MA crossover, and pairs, with transaction costs.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/portfolio-optimization" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">portfolio-optimization</span>
+                    <span class="file__stack">Streamlit &middot; SciPy &middot; Plotly</span>
+                    <span class="file__desc">Markowitz efficient frontier with Max Sharpe, Min Variance, and Risk Parity optimizers.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+              <li class="file">
+                <a class="file__link" href="https://github.com/Alper-Kulturel/monte-carlo-risk-simulator" target="_blank" rel="noopener noreferrer">
+                  <span class="file__dot" aria-hidden="true"></span>
+                  <span class="file__body">
+                    <span class="file__title">monte-carlo-risk-simulator</span>
+                    <span class="file__stack">Python &middot; NumPy</span>
+                    <span class="file__desc">Ten thousand simulated futures producing VaR, CVaR, and drawdown distributions.</span>
+                  </span>
+                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="next-folder shell" aria-label="Next folder">
+    <a class="next-folder__link" href="data.html" style="--next: var(--data)">
+      <span class="next-folder__text">
+        <span class="next-folder__kicker">Next folder &middot; 02 / 05</span>
+        <span class="next-folder__name">Data &amp; Analytics</span>
+      </span>
+      <span class="next-folder__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+
+  <div class="shell">
+    <div class="footer__icons" aria-hidden="true">
+      <svg class="footer__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="6"/><path d="M2 24h44M24 2v44"/></svg>
+      <svg class="footer__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1"><circle cx="24" cy="24" r="22"/><path d="M24 4 41.3 34H6.7Z"/><path d="M24 44 6.7 14h34.6Z"/></svg>
+      <svg class="footer__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1"><circle cx="24" cy="24" r="22"/><path d="M8 8h32v32H8z"/><path d="M8 18h32M8 30h32M18 8v32M30 8v32"/></svg>
+      <svg class="footer__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="16"/><path d="M24 2v44M2 24h44M8.4 8.4l31.2 31.2M39.6 8.4 8.4 39.6"/></svg>
+      <svg class="footer__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1"><circle cx="24" cy="24" r="22"/><rect x="10" y="10" width="28" height="28"/><rect x="17" y="17" width="14" height="14" transform="rotate(45 24 24)"/></svg>
+    </div>
+  </div>
+
+  <div class="footer__barwrap">
+    <div class="footer__bar">
+      <span class="footer__scale">0 4 8 16 32</span>
+      <span class="footer__copy">&copy; 2026 Alper Kulturel</span>
+      <span class="footer__tag">Quant &middot; Vol 01</span>
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>
