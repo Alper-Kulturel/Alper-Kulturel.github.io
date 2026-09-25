@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Alper Kulturel — social share card</title>
+
+  <!--
+    Source for assets/og.png (1200x630 social share card).
+
+    Regenerate the PNG with built-in macOS tooling — no dependencies:
+
+      # qlmanage scales the LARGER canvas dimension to -s and clips, and sips -c
+      # crops from the CENTRE, so the card below is drawn on a 1200x1200 canvas
+      # with the 630px-tall card vertically centred (offset 285). A centred crop
+      # then lands exactly on it. Render 1:1 by keeping the canvas square:
+
+      cp assets/og.svg /tmp/og-square.svg
+      #   -> set width/height/viewBox to 1200x1200 and wrap the content in
+      #      <g transform="translate(0,285)"> ... </g>
+      qlmanage -t -s 1200 -o /tmp /tmp/og-square.svg     # -> 1200x1200 PNG
+      sips -c 630 1200 /tmp/og-square.png --out assets/og.png
+
+    Note: Quick Look does not load web fonts, so the Google Fonts Anton used on
+    the site is unavailable here. Impact is the closest installed face and is
+    already the site's declared fallback for --display.
+  -->
+
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+
+  <!-- status pill -->
+  <rect x="80" y="58" width="418" height="52" rx="26" fill="none" stroke="rgba(244,239,228,0.26)" stroke-width="1.5"/>
+  <circle cx="114" cy="84" r="7" fill="#22c55e"/>
+  <text x="142" y="90" font-family="Menlo, monospace" font-size="17" fill="#f4efe4" opacity="0.92" letter-spacing="3.6">OPEN TO OPPORTUNITIES · 2026</text>
+
+  <!-- title -->
+  <text x="74" y="342" font-family="Impact, sans-serif" font-size="180" fill="#f4efe4">ALPER</text>
+  <text x="74" y="510" font-family="Impact, sans-serif" font-size="180" fill="none" stroke="#f4efe4" stroke-width="3.2" stroke-linejoin="round">KULTUREL</text>
+
+  <!-- folder strip -->
+  <rect x="84" y="590" width="87" height="14" rx="7" fill="#1e40af"/>
+  <rect x="184" y="590" width="87" height="14" rx="7" fill="#15803d"/>
+  <rect x="284" y="590" width="87" height="14" rx="7" fill="#b91c1c"/>
+  <rect x="384" y="590" width="87" height="14" rx="7" fill="#c2620e"/>
+  <rect x="484" y="590" width="87" height="14" rx="7" fill="#6b7280"/>
+
+  <!-- bottom right -->
+  <text x="1122" y="602" text-anchor="end" font-family="Menlo, monospace" font-size="17" fill="#f4efe4" opacity="0.78" letter-spacing="4">ISTANBUL / REMOTE · VOL. 01</text>
+</svg>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE KULTUREL FILES — interactions
+   ALPER KULTUREL — interactions
    Custom double cursor · typewriter · reveal observers · flap entrance
    ========================================================================== */
 
