@@ -183,9 +183,15 @@
     var slots = document.querySelectorAll(".cabinet__slot");
     var dossiers = document.querySelectorAll(".dossier");
     var fileLists = document.querySelectorAll(".files");
+    var creds = document.querySelectorAll(".cred");
 
     each(slots, function (slot, i) {
       slot.style.setProperty("--i", String(i));
+    });
+
+    each(creds, function (cred, i) {
+      // capped, so a long history never crawls in
+      cred.style.setProperty("--cred-delay", Math.min(i, 6) * 90 + "ms");
     });
 
     each(fileLists, function (list) {
@@ -199,6 +205,7 @@
       each(slots, function (n) { n.classList.add("is-in"); });
       each(dossiers, function (n) { n.classList.add("is-open"); });
       each(fileLists, function (n) { n.classList.add("is-in"); });
+      each(creds, function (n) { n.classList.add("is-in"); });
       return;
     }
 
@@ -239,6 +246,18 @@
       { threshold: 0.02, rootMargin: "0px 0px -4% 0px" }
     );
     each(fileLists, function (list) { fileObserver.observe(list); });
+
+    var credObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+    );
+    each(creds, function (cred) { credObserver.observe(cred); });
   }
 
   /* ----------------------------------------------------------------------
@@ -288,24 +307,100 @@
 
   /* ----------------------------------------------------------------------
      5. FOOTER ICONS
-     Five permanently-rotating SVG layers are pure cost once the footer is
-     off screen. Pause them until it is.
+     Three things happen here: the icons stagger in on scroll, they pause
+     once the footer leaves the viewport (five infinite rotations are pure
+     cost off screen), and they scale and brighten as the pointer approaches.
+     The proximity pass only runs on pointermove, and only while the pointer
+     is inside the footer.
      ---------------------------------------------------------------------- */
 
   function initFooterIcons() {
     var host = document.querySelector(".footer__icons");
-    if (!host || !canObserve) return;
+    if (!host) return;
 
-    var observer = new IntersectionObserver(
+    var wraps = host.querySelectorAll(".footer__icon-wrap");
+
+    each(wraps, function (wrap, i) {
+      wrap.style.setProperty("--i", String(i));
+    });
+
+    var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (reduceMotion || !canObserve) {
+      host.classList.add("is-in");
+      return;
+    }
+
+    new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          host.classList.add("is-in");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2 }
+    ).observe(host);
+
+    new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           host.classList.toggle("is-idle", !entry.isIntersecting);
         });
       },
       { rootMargin: "120px 0px" }
+    ).observe(host);
+
+    if (!fine || !wraps.length) return;
+
+    var footer = host.closest(".site-footer") || host;
+    var RADIUS = 190;
+    var centres = null;
+    var pointer = { x: 0, y: 0 };
+    var ticking = false;
+
+    // the centres only move on layout change, and scaling happens around
+    // transform-origin 50% 50%, so the centre never shifts as an icon grows
+    function measure() {
+      centres = Array.prototype.map.call(wraps, function (wrap) {
+        var box = wrap.getBoundingClientRect();
+        return { x: box.left + box.width / 2, y: box.top + box.height / 2 };
+      });
+    }
+
+    function apply() {
+      ticking = false;
+      if (!centres) measure();
+
+      each(wraps, function (wrap, i) {
+        var dx = pointer.x - centres[i].x;
+        var dy = pointer.y - centres[i].y;
+        var near = 1 - Math.sqrt(dx * dx + dy * dy) / RADIUS;
+        if (near < 0) near = 0;
+        // smoothstep, so the falloff eases rather than ramping linearly
+        near = near * near * (3 - 2 * near);
+        wrap.style.setProperty("--near", near.toFixed(3));
+      });
+    }
+
+    footer.addEventListener(
+      "pointermove",
+      function (event) {
+        pointer.x = event.clientX;
+        pointer.y = event.clientY;
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(apply);
+      },
+      { passive: true }
     );
 
-    observer.observe(host);
+    footer.addEventListener("pointerleave", function () {
+      each(wraps, function (wrap) { wrap.style.setProperty("--near", "0"); });
+    });
+
+    window.addEventListener("resize", function () { centres = null; }, { passive: true });
+    window.addEventListener("scroll", function () { centres = null; }, { passive: true });
   }
 
   /* ----------------------------------------------------------------------
