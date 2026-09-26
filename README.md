@@ -88,6 +88,8 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 │   ├── Alper-Kulturel-CV.docx   # Word version, opens in Google Docs
 │   ├── favicon.svg              # five-bar folder mark
 │   └── og.png                   # 1200×630 social card
+├── tools/
+│   └── build_cv.py              # regenerates the two CV files above
 ├── robots.txt
 ├── sitemap.xml
 ├── .nojekyll               # disable Jekyll on GitHub Pages
@@ -163,6 +165,23 @@ Then update the count in three places: the `<dd class="meta__value">` for **File
 `assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.docx` are generated, not hand-written.
 The `cv.html` page offers both: the PDF downloads in one click, and the `.docx` is what Google Docs
 opens natively when uploaded. Keep the two in sync with the page when the CV changes.
+
+Both come from `tools/build_cv.py`, which holds the CV's content as plain Python data and writes
+into `assets/`. It is the only thing in this repository with dependencies — the site itself still
+has none. To regenerate after editing:
+
+```bash
+python3 -m venv .venv-cv
+.venv-cv/bin/pip install reportlab python-docx
+.venv-cv/bin/python tools/build_cv.py
+```
+
+Two constraints live in that script, both explained in comments where they bite:
+
+- **The PDF must stay one page.** It is sized to fit A4 exactly. Adding a role, a bullet or a
+  project without removing something else will push `Technical Skills` onto a second sheet.
+- **Everything the PDF draws is HTML-escaped.** reportlab parses paragraph text as mini-HTML, so a
+  raw `&` — as in `P&L` — is read as the start of an entity and reaches the page as `P&L;`.
 
 ---
 
