@@ -3,52 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Systems — Alper Kulturel</title>
-<meta name="description" content="Four systems engineering projects by Alper Kulturel: a C++17 Black-Scholes pricer, a price-time priority order book, an ITCH feed handler with p50/p99 benchmarks, and a live crypto data pipeline.">
+<title>Systems &amp; Infrastructure — Alper Kulturel</title>
+<meta name="description" content="C++17 Black-Scholes pricing, a price-time priority matching engine, and a low-latency ITCH feed handler — systems and infrastructure projects by Alper Kulturel.">
 <meta name="author" content="Alper Kulturel">
 <meta name="theme-color" content="#0D0D0D">
 <link rel="canonical" href="https://alper-kulturel.github.io/systems.html">
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Alper Kulturel">
-<meta property="og:title" content="Systems — Alper Kulturel">
-<meta property="og:description" content="What happens underneath — a C++ core bound to Python, binary protocols parsed at wire speed, and infrastructure that stays correct while the market is open.">
+<meta property="og:title" content="Systems &amp; Infrastructure — Alper Kulturel">
+<meta property="og:description" content="C++17 libraries and low-latency components — the layer the models run on.">
 <meta property="og:url" content="https://alper-kulturel.github.io/systems.html">
 <meta property="og:image" content="https://alper-kulturel.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alper Kulturel — the portfolio archive.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Systems — Alper Kulturel">
-<meta name="twitter:description" content="What happens underneath — a C++ core bound to Python, binary protocols parsed at wire speed, and infrastructure that stays correct while the market is open.">
+<meta name="twitter:title" content="Systems &amp; Infrastructure — Alper Kulturel">
+<meta name="twitter:description" content="C++17 libraries and low-latency components — the layer the models run on.">
 <meta name="twitter:image" content="https://alper-kulturel.github.io/assets/og.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=EB+Garamond:ital,wght@0,400;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/main.js" defer></script>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Alper Kulturel",
-  "jobTitle": "Developer & Analyst",
-  "url": "https://alper-kulturel.github.io/",
-  "email": "mailto:kulturelalper@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
-  "sameAs": [
-    "https://github.com/Alper-Kulturel",
-    "https://www.linkedin.com/in/alper-kulturel-951a7421a/"
-  ],
-  "knowsAbout": ["C++", "Low-Latency Systems", "Market Data", "Docker", "PostgreSQL", "pybind11"]
+  "@type": "CollectionPage",
+  "name": "Systems & Infrastructure — Alper Kulturel",
+  "url": "https://alper-kulturel.github.io/systems.html",
+  "about": "Systems engineering projects: C++17 derivatives pricing, matching engine design, and low-latency market data parsing.",
+  "author": { "@type": "Person", "name": "Alper Kulturel", "url": "https://alper-kulturel.github.io/" }
 }
 </script>
 </head>
 
-<body class="page--systems">
+<body class="page--folder page--systems">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -59,8 +53,12 @@
       Alper Kulturel
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a class="site-nav__link" href="about.html">About</a>
-      <a class="site-nav__link" href="about.html#contact">Contact</a>
+      <a class="site-nav__link site-nav__link--back" href="index.html" aria-label="Back to all folders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        <span>Index</span>
+      </a>
+      <a class="site-nav__link" href="cv.html">CV</a>
+      <a class="site-nav__link" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -68,9 +66,17 @@
 <main id="main">
 
   <header class="page-head shell">
-    <p class="kicker">Folder 03 / 05</p>
-    <h1 class="page-title">Systems</h1>
-    <p class="page-sub">What happens underneath &mdash; a C++ core bound to Python, binary protocols parsed at wire speed, and infrastructure that stays correct while the market is open.</p>
+
+    <div class="page-head__top">
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        All folders
+      </a>
+    </div>
+
+    <p class="kicker">Folder 04 / 05</p>
+    <h1 class="page-title">Systems &amp;<br>Infrastructure</h1>
+    <p class="page-sub">C++17 libraries and low-latency components &mdash; the layer the models run on, measured in nanoseconds.</p>
   </header>
 
   <section class="dossier-section shell" aria-labelledby="dossier-label">
@@ -91,83 +97,69 @@
           </svg>
 
           <div class="paper__monogram" aria-hidden="true">AK</div>
-          <span class="paper__edge" aria-hidden="true">Folder 03 &mdash; Systems</span>
+          <span class="paper__edge" aria-hidden="true">Folder 04 &mdash; Systems &amp; Infrastructure</span>
 
           <dl class="paper__meta">
             <div class="meta__item">
-              <dt class="meta__label">Category</dt>
-              <dd class="meta__value">Systems Engineering</dd>
+              <dt class="meta__label">Files</dt>
+              <dd class="meta__value">03</dd>
             </div>
             <div class="meta__item">
               <dt class="meta__label">Stack</dt>
-              <dd class="meta__value">C++17 &middot; Docker &middot; PostgreSQL</dd>
+              <dd class="meta__value">C++17 &middot; CMake &middot; pybind11</dd>
             </div>
             <div class="meta__item">
-              <dt class="meta__label">Files</dt>
-              <dd class="meta__value">04 items</dd>
+              <dt class="meta__label">Focus</dt>
+              <dd class="meta__value">Latency &middot; Data Structures &middot; Parsing</dd>
             </div>
           </dl>
 
-          <p class="paper__lede">Four files concerned with what happens underneath. The pricing and matching logic from the Quant folder appears here again, this time read as engineering: data structures with stated complexity, measured latency, and a live pipeline that has to stay correct while the market is open.</p>
-          <p class="paper__lede paper__lede--plain">The C++ work is compiled, benchmarked, and exposed to Python through pybind11 &mdash; fast where it matters, readable everywhere else. The pipeline batches, deduplicates, and survives a reconnect.</p>
+          <p class="paper__lede">The models in the other folders assume the numbers arrive on time. These three projects are about earning that assumption. A dependency-free Black-Scholes library that prices a scalar option in 38.8 nanoseconds and binds cleanly into Python with pybind11, so the fast path and the readable path are the same code.</p>
+          <p class="paper__lede paper__lede--plain">The matching engine implements true price-time priority, holding O(log n) insertion and O(1) cancellation at roughly 67 nanoseconds per insert. The feed handler parses the ITCH binary protocol and is benchmarked at p50 and p99 rather than on averages, because tail latency is the number that actually breaks a trading system &mdash; and it ships with an ablation study showing which optimisations paid for themselves and which did not.</p>
 
           <div class="files">
+
             <div class="files__head">
-              <span>File index</span>
-              <span>04 items</span>
+              <span>File</span>
+              <span>03 entries</span>
             </div>
 
-            <ul>
+            <div class="file">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-black-scholes" target="_blank" rel="noopener noreferrer">
+                <span class="file__dot" aria-hidden="true"></span>
+                <span class="file__body">
+                  <span class="file__title">cpp-black-scholes</span>
+                  <span class="file__stack">C++17 &middot; pybind11 &middot; CMake</span>
+                  <span class="file__desc">Dependency-free Black-Scholes library with Python bindings and a benchmarked 38.8 ns per scalar price.</span>
+                </span>
+                <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+              </a>
+            </div>
 
-              <li class="file">
-                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-black-scholes" target="_blank" rel="noopener noreferrer">
-                  <span class="file__dot" aria-hidden="true"></span>
-                  <span class="file__body">
-                    <span class="file__title">cpp-black-scholes</span>
-                    <span class="file__stack">C++17 &middot; pybind11 &middot; CMake</span>
-                    <span class="file__desc">Analytical option pricer exposing all five Greeks, with implied volatility solved by Newton&ndash;Raphson.</span>
-                  </span>
-                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
-                </a>
-              </li>
+            <div class="file">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-order-book" target="_blank" rel="noopener noreferrer">
+                <span class="file__dot" aria-hidden="true"></span>
+                <span class="file__body">
+                  <span class="file__title">cpp-order-book</span>
+                  <span class="file__stack">C++17 &middot; CMake</span>
+                  <span class="file__desc">Price-time priority matching engine with O(log n) add and O(1) cancel, measured at ~67 ns per insert.</span>
+                </span>
+                <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+              </a>
+            </div>
 
-              <li class="file">
-                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-order-book" target="_blank" rel="noopener noreferrer">
-                  <span class="file__dot" aria-hidden="true"></span>
-                  <span class="file__body">
-                    <span class="file__title">cpp-order-book</span>
-                    <span class="file__stack">C++17 &middot; pybind11</span>
-                    <span class="file__desc">Price&ndash;time priority matching engine with O(log n) add, O(1) cancel, and partial fills.</span>
-                  </span>
-                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
-                </a>
-              </li>
+            <div class="file">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-feed-handler" target="_blank" rel="noopener noreferrer">
+                <span class="file__dot" aria-hidden="true"></span>
+                <span class="file__body">
+                  <span class="file__title">cpp-feed-handler</span>
+                  <span class="file__stack">C++17 &middot; ITCH &middot; CMake</span>
+                  <span class="file__desc">Low-latency ITCH binary feed parser with p50/p99 benchmarks and an optimisation ablation study.</span>
+                </span>
+                <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+              </a>
+            </div>
 
-              <li class="file">
-                <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-feed-handler" target="_blank" rel="noopener noreferrer">
-                  <span class="file__dot" aria-hidden="true"></span>
-                  <span class="file__body">
-                    <span class="file__title">cpp-feed-handler</span>
-                    <span class="file__stack">C++17 &middot; pybind11 &middot; ITCH</span>
-                    <span class="file__desc">Low-latency market data parser for the ITCH binary protocol, benchmarked at p50 and p99.</span>
-                  </span>
-                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
-                </a>
-              </li>
-
-              <li class="file">
-                <a class="file__link" href="https://github.com/Alper-Kulturel/crypto-data-pipeline" target="_blank" rel="noopener noreferrer">
-                  <span class="file__dot" aria-hidden="true"></span>
-                  <span class="file__body">
-                    <span class="file__title">crypto-data-pipeline</span>
-                    <span class="file__stack">Python &middot; WebSocket &middot; PostgreSQL &middot; Docker</span>
-                    <span class="file__desc">Live Binance trade ingestion with batching and deduplication.</span>
-                  </span>
-                  <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
-                </a>
-              </li>
-
-            </ul>
           </div>
 
         </article>
@@ -177,10 +169,10 @@
   </section>
 
   <section class="next-folder shell" aria-label="Next folder">
-    <a class="next-folder__link" href="game-dev.html" style="--next: var(--game)">
+    <a class="next-folder__link" href="cv.html" style="--next: var(--cv)">
       <span class="next-folder__text">
-        <span class="next-folder__kicker">Next folder &middot; 04 / 05</span>
-        <span class="next-folder__name">Game Development</span>
+        <span class="next-folder__kicker">Next folder &middot; 05 / 05</span>
+        <span class="next-folder__name">CV</span>
       </span>
       <span class="next-folder__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -204,7 +196,7 @@
     <div class="footer__bar">
       <span class="footer__scale">0 4 8 16 32</span>
       <span class="footer__copy">&copy; 2026 Alper Kulturel</span>
-      <span class="footer__tag">Systems &middot; Vol 01</span>
+      <span class="footer__tag">Portfolio &middot; Vol 01</span>
     </div>
   </div>
 

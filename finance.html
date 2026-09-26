@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quantitative Finance — Alper Kulturel</title>
-<meta name="description" content="Derivative pricing, Monte Carlo risk simulation, portfolio optimisation and strategy backtesting — seven quantitative finance projects by Alper Kulturel.">
+<title>Financial Analytics — Alper Kulturel</title>
+<meta name="description" content="Credit risk scoring, FP&amp;A variance analysis, automated financial reporting and SQL market data — five financial analytics projects by Alper Kulturel.">
 <meta name="author" content="Alper Kulturel">
 <meta name="theme-color" content="#0D0D0D">
-<link rel="canonical" href="https://alper-kulturel.github.io/quant.html">
+<link rel="canonical" href="https://alper-kulturel.github.io/finance.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alper Kulturel">
-<meta property="og:title" content="Quantitative Finance — Alper Kulturel">
-<meta property="og:description" content="Derivative pricing, risk simulation, and strategy backtesting — models built from the maths up.">
-<meta property="og:url" content="https://alper-kulturel.github.io/quant.html">
+<meta property="og:title" content="Financial Analytics — Alper Kulturel">
+<meta property="og:description" content="Reporting, variance analysis and credit risk — the numbers a finance team actually runs on.">
+<meta property="og:url" content="https://alper-kulturel.github.io/finance.html">
 <meta property="og:image" content="https://alper-kulturel.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alper Kulturel — the portfolio archive.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Quantitative Finance — Alper Kulturel">
-<meta name="twitter:description" content="Derivative pricing, risk simulation, and strategy backtesting — models built from the maths up.">
+<meta name="twitter:title" content="Financial Analytics — Alper Kulturel">
+<meta name="twitter:description" content="Reporting, variance analysis and credit risk — the numbers a finance team actually runs on.">
 <meta name="twitter:image" content="https://alper-kulturel.github.io/assets/og.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -34,15 +34,15 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Quantitative Finance — Alper Kulturel",
-  "url": "https://alper-kulturel.github.io/quant.html",
-  "about": "Quantitative finance projects: derivative pricing, risk simulation, portfolio optimisation and strategy backtesting.",
+  "name": "Financial Analytics — Alper Kulturel",
+  "url": "https://alper-kulturel.github.io/finance.html",
+  "about": "Financial analytics projects: credit risk scoring, FP&A variance analysis, automated reporting pipelines and SQL market data work.",
   "author": { "@type": "Person", "name": "Alper Kulturel", "url": "https://alper-kulturel.github.io/" }
 }
 </script>
 </head>
 
-<body class="page--folder page--quant">
+<body class="page--folder page--finance">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -74,9 +74,9 @@
       </a>
     </div>
 
-    <p class="kicker">Folder 01 / 05</p>
-    <h1 class="page-title">Quantitative<br>Finance</h1>
-    <p class="page-sub">Derivative pricing, risk simulation, and strategy backtesting &mdash; models built from the maths up, with the numbers shown.</p>
+    <p class="kicker">Folder 02 / 05</p>
+    <h1 class="page-title">Financial<br>Analytics</h1>
+    <p class="page-sub">Reporting, variance analysis and credit risk &mdash; the numbers a finance team actually runs on, built end to end.</p>
   </header>
 
   <section class="dossier-section shell" aria-labelledby="dossier-label">
@@ -97,112 +97,88 @@
           </svg>
 
           <div class="paper__monogram" aria-hidden="true">AK</div>
-          <span class="paper__edge" aria-hidden="true">Folder 01 &mdash; Quantitative Finance</span>
+          <span class="paper__edge" aria-hidden="true">Folder 02 &mdash; Financial Analytics</span>
 
           <dl class="paper__meta">
             <div class="meta__item">
               <dt class="meta__label">Files</dt>
-              <dd class="meta__value">07</dd>
+              <dd class="meta__value">05</dd>
             </div>
             <div class="meta__item">
               <dt class="meta__label">Stack</dt>
-              <dd class="meta__value">Python &middot; C++17 &middot; NumPy &middot; SciPy</dd>
+              <dd class="meta__value">Python &middot; SQL &middot; PostgreSQL &middot; Tableau</dd>
             </div>
             <div class="meta__item">
               <dt class="meta__label">Focus</dt>
-              <dd class="meta__value">Pricing &middot; Risk &middot; Backtesting</dd>
+              <dd class="meta__value">Reporting &middot; Variance &middot; Credit Risk</dd>
             </div>
           </dl>
 
-          <p class="paper__lede">Every model in this folder starts from the mathematics and ends in a number that can be checked. Options are valued three independent ways &mdash; closed form, lattice and simulation &mdash; so the implementations validate each other rather than being trusted on faith. Backtests model the costs that real execution imposes, because a strategy that only works at zero slippage does not work.</p>
-          <p class="paper__lede paper__lede--plain">The through-line is reproducibility: assumptions stated up front, benchmarks published alongside results, and code written to be read by whoever inherits it. Where a result is unflattering &mdash; a strategy that fails its significance test, a model that only holds in-sample &mdash; it stays in the write-up.</p>
+          <p class="paper__lede">This is the reporting layer: taking raw ledger and market data, validating it, and turning it into the handful of figures a decision actually rests on. The work spans a full PD/LGD/EAD credit risk framework with Basel IRB capital, price-volume-mix attribution for budget versus actuals, and a reporting pipeline that computes revenue, margin and EBITDA before emitting a formatted workbook.</p>
+          <p class="paper__lede paper__lede--plain">Two habits run through all of it. The first is reconciliation &mdash; a number that cannot be traced back to its source rows is not finished. The second is presentation: variance is only useful once it is ranked by materiality, so the output says where to look, not just what changed.</p>
 
           <div class="files">
 
             <div class="files__head">
               <span>File</span>
-              <span>07 entries</span>
+              <span>05 entries</span>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/options-pricing-engine" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/credit-risk-scoring" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">options-pricing-engine</span>
-                  <span class="file__stack">Python &middot; NumPy &middot; SciPy</span>
-                  <span class="file__desc">Option valuation by Black-Scholes, Monte Carlo and binomial lattice, with the full Greeks, implied volatility and a volatility surface.</span>
+                  <span class="file__title">credit-risk-scoring</span>
+                  <span class="file__stack">Python &middot; scikit-learn</span>
+                  <span class="file__desc">PD/LGD/EAD framework producing Expected Loss, internal credit grades and Basel IRB capital requirements.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/stock-backtesting-engine" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/fpa-variance-dashboard" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">stock-backtesting-engine</span>
-                  <span class="file__stack">Python &middot; pandas</span>
-                  <span class="file__desc">Event-driven equity backtester modelling transaction costs and slippage, reporting the equity curve, drawdown and rolling Sharpe.</span>
+                  <span class="file__title">fpa-variance-dashboard</span>
+                  <span class="file__stack">Python &middot; Streamlit</span>
+                  <span class="file__desc">Price, volume and mix attribution for budget versus actuals, with materiality scoring to rank what deserves attention.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/pairs-trading" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/financial-reporting-pipeline" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">pairs-trading</span>
-                  <span class="file__stack">Python &middot; statsmodels</span>
-                  <span class="file__desc">Cointegration-based market-neutral pairs strategy, with ADF testing to select the pairs and a full backtest to judge them.</span>
+                  <span class="file__title">financial-reporting-pipeline</span>
+                  <span class="file__stack">Python &middot; PostgreSQL &middot; openpyxl</span>
+                  <span class="file__desc">Validated ETL computing revenue, margin and EBITDA KPIs, emitting a four-sheet Excel report on every run.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/portfolio-optimization" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/fpa-dashboard" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">portfolio-optimization</span>
-                  <span class="file__stack">Python &middot; SciPy</span>
-                  <span class="file__desc">Markowitz efficient frontier comparing Max Sharpe, Minimum Variance and Risk Parity allocations against a naive 1/N benchmark.</span>
+                  <span class="file__title">fpa-dashboard</span>
+                  <span class="file__stack">Tableau</span>
+                  <span class="file__desc">FP&amp;A dashboard over a multi-region budget-versus-actuals dataset, built for the monthly close review.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/monte-carlo-risk-simulator" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/market-data-etl" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">monte-carlo-risk-simulator</span>
-                  <span class="file__stack">Python &middot; NumPy</span>
-                  <span class="file__desc">Ten thousand correlated future paths producing VaR, CVaR, maximum drawdown and risk-adjusted return for a multi-asset book.</span>
-                </span>
-                <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
-              </a>
-            </div>
-
-            <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/sentiment-analyzer" target="_blank" rel="noopener noreferrer">
-                <span class="file__dot" aria-hidden="true"></span>
-                <span class="file__body">
-                  <span class="file__title">sentiment-analyzer</span>
-                  <span class="file__stack">Python &middot; VADER &middot; FinBERT</span>
-                  <span class="file__desc">Financial news sentiment scored two ways, then tested for genuine predictive power against next-session returns.</span>
-                </span>
-                <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
-              </a>
-            </div>
-
-            <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/market-daily" target="_blank" rel="noopener noreferrer">
-                <span class="file__dot" aria-hidden="true"></span>
-                <span class="file__body">
-                  <span class="file__title">market-daily</span>
-                  <span class="file__stack">Python &middot; PostgreSQL</span>
-                  <span class="file__desc">Automated end-of-day snapshot across equities, volatility, rates, FX and commodities &mdash; the daily read that feeds everything else.</span>
+                  <span class="file__title">market-data-etl</span>
+                  <span class="file__stack">SQL &middot; PostgreSQL &middot; SQLite</span>
+                  <span class="file__desc">Twenty hand-written SQL queries over two years of S&amp;P 500 daily data, portable across PostgreSQL and SQLite.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
@@ -217,10 +193,10 @@
   </section>
 
   <section class="next-folder shell" aria-label="Next folder">
-    <a class="next-folder__link" href="finance.html" style="--next: var(--finance)">
+    <a class="next-folder__link" href="data.html" style="--next: var(--data)">
       <span class="next-folder__text">
-        <span class="next-folder__kicker">Next folder &middot; 02 / 05</span>
-        <span class="next-folder__name">Financial Analytics</span>
+        <span class="next-folder__kicker">Next folder &middot; 03 / 05</span>
+        <span class="next-folder__name">Data Analytics</span>
       </span>
       <span class="next-folder__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
     </a>

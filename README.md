@@ -1,6 +1,8 @@
 # Alper Kulturel
 
-Personal portfolio of **Alper Kulturel** — developer and analyst based in Istanbul, open to relocation.
+Personal portfolio of **Alper Kulturel** — Financial Analyst with 2+ years in financial data
+analysis, performance reporting, and KPI-driven decision support. Based in Istanbul, open to
+US relocation.
 
 A static site built as an archive: five colour-coded folders, each opening into a dossier of real,
 shipped work. Hand-written HTML, CSS, and JavaScript. **No frameworks, no build step, no npm, no
@@ -12,12 +14,16 @@ dependencies** beyond the Google Fonts stylesheet.
 
 | File | Folder | Contents |
 | --- | --- | --- |
-| `index.html` | — | Hero, folder cabinet, stats bar |
-| `quant.html` | 01 · `#1E40AF` | 8 files — pricing, matching engines, backtesting |
-| `data.html` | 02 · `#15803D` | 7 files — credit risk, churn, sentiment, SQL, dashboards |
-| `systems.html` | 03 · `#B91C1C` | 4 files — C++ core, market data, live infrastructure |
-| `game-dev.html` | 04 · `#C2620E` | 4 files — work experience, certifications, community |
-| `about.html` | 05 · `#374151` | Practice, education, tools, contact |
+| `index.html` | — | Hero, bio, folder cabinet, stats bar |
+| `quant.html` | 01 · `#1E40AF` | 7 files — derivatives pricing, risk simulation, backtesting |
+| `finance.html` | 02 · `#0F766E` | 5 files — credit risk, variance analysis, reporting pipelines |
+| `data.html` | 03 · `#B45309` | 3 files — churn modelling, segmentation, streaming ingestion |
+| `systems.html` | 04 · `#B91C1C` | 3 files — C++17 pricing, matching engine, feed handler |
+| `cv.html` | 05 · `#374151` | Curriculum vitae, with PDF / Google Docs download |
+| `contact.html` | — | Contact form that composes a mailto to `kulturelalper@gmail.com` |
+
+Each folder page carries a **back button** at the top of the page head, a compact back arrow in the
+sticky header, and a "next folder" card at the bottom.
 
 ---
 
@@ -66,19 +72,22 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 
 ```
 .
-├── index.html              # homepage — hero, cabinet, stats
-├── quant.html              # folder 01
-├── data.html               # folder 02
-├── systems.html            # folder 03
-├── game-dev.html           # folder 04
-├── about.html              # folder 05
+├── index.html              # homepage — hero, bio, cabinet, stats
+├── quant.html              # folder 01 — Quantitative Finance
+├── finance.html            # folder 02 — Financial Analytics
+├── data.html               # folder 03 — Data Analytics
+├── systems.html            # folder 04 — Systems & Infrastructure
+├── cv.html                 # folder 05 — Curriculum Vitae
+├── contact.html            # contact form
 ├── css/
 │   └── style.css           # the entire design system
 ├── js/
-│   └── main.js             # cursor, typewriter, reveal observers
+│   └── main.js             # cursor, typewriter, reveals, counters, form
 ├── assets/
-│   ├── favicon.svg         # five-bar folder mark
-│   └── og.png              # 1200×630 social card
+│   ├── Alper-Kulturel-CV.pdf    # one-page CV, generated
+│   ├── Alper-Kulturel-CV.docx   # Word version, opens in Google Docs
+│   ├── favicon.svg              # five-bar folder mark
+│   └── og.png                   # 1200×630 social card
 ├── robots.txt
 ├── sitemap.xml
 ├── .nojekyll               # disable Jekyll on GitHub Pages
@@ -92,28 +101,46 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 Defined once as custom properties at the top of `css/style.css`.
 
 **Surfaces** — near-black `#0D0D0D`; off-white paper `#F4EFE4` with an inline SVG
-`feTurbulence` grain applied as a multiply overlay.
+`feTurbulence` grain applied as an overlay.
 
-**Folders** — QUANT `#1E40AF`, DATA `#15803D`, SYSTEMS `#B91C1C`, GAME DEV `#C2620E`,
-ABOUT `#374151`. Each category page sets `--accent`, `--accent-deep`, and `--accent-lift` on
-`<body>`, which themes the drop cap, monogram badge, bullet dots, focus rings, and footer
-background in one place. Changing a folder's colour means editing one line.
+**Folders** — Quantitative Finance `#1E40AF`, Financial Analytics `#0F766E`, Data Analytics
+`#B45309`, Systems & Infrastructure `#B91C1C`, CV `#374151`. Category pages set
+`--accent`, `--accent-deep`, and `--accent-lift` via a `.page--*` class on `<body>`, which themes
+the drop cap, monogram badge, bullet dots, focus rings, folder cards, and footer background in one
+place. Changing a folder's colour means editing one line.
 
 **Typography** — Anton (display), Playfair Display (folder names, file titles), EB Garamond
 (body), JetBrains Mono (metadata). Body and display sizes use `clamp()`, so the layout scales
-continuously rather than only at breakpoints.
+continuously rather than only at breakpoints. Only the weights actually used are requested from
+Google Fonts.
 
 **Layout** — folder cards sit in a stack with `perspective: 3000px` and a `-22px` overlap; the
-dossier cover folds open with a `rotateX` transition clipped by its stage.
+dossier cover folds open with a `rotateX` transition, and the paper beneath slides up behind it.
+
+---
+
+## Performance
+
+The page is designed to stay quiet when nothing is happening:
+
+- The custom cursor's `requestAnimationFrame` loop **stops** once the ring and dot have caught up
+  with the pointer, and restarts on the next `pointermove`. It is not a permanent 60fps loop.
+- The five rotating footer SVGs **pause** (`animation-play-state`) whenever the footer is off
+  screen, via an `IntersectionObserver`.
+- Scroll work is throttled to one `requestAnimationFrame` per frame.
+- The fixed header uses a shallow blur without a `saturate()` pass, which was the most expensive
+  thing on the page during scroll.
+- Every `IntersectionObserver` unobserves its target once it has fired — reveals, counters and the
+  footer pause each run exactly once.
 
 ---
 
 ## Adding a project
 
-Each entry in a category page is one `<li class="file">` block:
+Each entry in a category page is one `.file` block:
 
 ```html
-<li class="file">
+<div class="file">
   <a class="file__link" href="https://github.com/Alper-Kulturel/REPO" target="_blank" rel="noopener noreferrer">
     <span class="file__dot" aria-hidden="true"></span>
     <span class="file__body">
@@ -121,9 +148,9 @@ Each entry in a category page is one `<li class="file">` block:
       <span class="file__stack">Language &middot; Library &middot; Tool</span>
       <span class="file__desc">One line on what it does.</span>
     </span>
-    <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+    <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
   </a>
-</li>
+</div>
 ```
 
 Then update the count in three places: the `<dd class="meta__value">` for **Files**, the
@@ -131,12 +158,31 @@ Then update the count in three places: the `<dd class="meta__value">` for **File
 
 ---
 
+## The CV files
+
+`assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.docx` are generated, not hand-written.
+The `cv.html` page offers both: the PDF downloads in one click, and the `.docx` is what Google Docs
+opens natively when uploaded. Keep the two in sync with the page when the CV changes.
+
+---
+
+## Contact form
+
+`contact.html` has no backend. On submit, `js/main.js` validates the four fields and composes a
+`mailto:` URL — name, company, purpose and message pre-written in the body — then hands it to the
+visitor's mail client. Nothing is sent to or stored by any third party. The recipient address lives
+in the `data-recipient` attribute on the `<form>`.
+
+---
+
 ## Accessibility
 
 Semantic HTML5 landmarks; a skip link on every page; `aria-label` on all interactive controls;
-keyboard navigable throughout with visible `:focus-visible` rings; WCAG AA contrast. All motion
-respects `prefers-reduced-motion` — the typewriter, the folder stagger, the cover fold, and the
-custom cursor all resolve to their final state without animation.
+`aria-live` on the form status; keyboard navigable throughout with visible `:focus-visible` rings;
+WCAG AA contrast. All motion respects `prefers-reduced-motion` — the typewriter, the folder
+stagger, the cover fold, the counters and the custom cursor all resolve to their final state
+without animation. The CV page also carries a print stylesheet, so `Ctrl/Cmd + P` produces a clean
+paper copy.
 
 ---
 
