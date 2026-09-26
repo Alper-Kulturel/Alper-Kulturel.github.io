@@ -779,12 +779,21 @@ html.cursor-ready .cursor { opacity: 1; }
 .creds {
   position: relative;
   z-index: 1;
-  padding-block: clamp(52px, 7.5vw, 104px);
+  padding-block: clamp(48px, 6vw, 84px);
 }
 
 /* the cabinet supplies its own top padding, so only the seam between two
    adjacent credential blocks needs a rule */
 .creds + .creds { border-top: 1px solid var(--rule); }
+
+/* Two stacked blocks would otherwise stack both paddings around the seam and
+   leave ~200px of dead space either side of the rule. :has() trims the block
+   above; without it this degrades to the plain padding above, still fine. */
+.creds + .creds,
+.creds + .cabinet { padding-top: clamp(34px, 4.2vw, 56px); }
+
+.creds:has(+ .creds),
+.creds:has(+ .cabinet) { padding-bottom: clamp(34px, 4.2vw, 56px); }
 
 .creds__label {
   display: flex;
