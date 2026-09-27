@@ -85,7 +85,7 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 │   └── main.js             # cursor, typewriter, reveals, counters, form
 ├── assets/
 │   ├── Alper-Kulturel-CV.pdf    # one-page CV, final — mirrored by cv.html
-│   ├── Alper-Kulturel-CV.docx   # Word version, opens in Google Docs
+│   ├── Alper-Kulturel-CV.doc    # Word version, opens in Google Docs
 │   ├── favicon.svg              # five-bar folder mark
 │   └── og.png                   # 1200×630 social card
 ├── robots.txt
@@ -160,9 +160,9 @@ Then update the count in three places: the `<dd class="meta__value">` for **File
 
 ## The CV files
 
-`assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.docx` are the finalized CV documents,
+`assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.doc` are the finalized CV documents,
 authored outside this repository. They are the source of truth for what a recruiter downloads, and
-`cv.html` mirrors them. The page offers both: the PDF downloads in one click, and the `.docx` is
+`cv.html` mirrors them. The page offers both: the PDF downloads in one click, and the `.doc` is
 what Google Docs opens natively when uploaded.
 
 Nothing in this repository generates them. A `tools/build_cv.py` script used to, but it has been
