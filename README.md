@@ -1,8 +1,8 @@
 # Alper Kulturel
 
 Personal portfolio of **Alper Kulturel** — Financial Analyst with 2+ years in financial data
-analysis, performance reporting, and KPI-driven decision support. Based in Istanbul, open to
-US relocation.
+analysis, performance reporting, and KPI-driven decision support. Based in Miami Beach,
+Florida.
 
 A static site built as an archive: five colour-coded folders, each opening into a dossier of real,
 shipped work. Hand-written HTML, CSS, and JavaScript. **No frameworks, no build step, no npm, no
@@ -84,12 +84,10 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 ├── js/
 │   └── main.js             # cursor, typewriter, reveals, counters, form
 ├── assets/
-│   ├── Alper-Kulturel-CV.pdf    # one-page CV, generated
+│   ├── Alper-Kulturel-CV.pdf    # one-page CV, final — mirrored by cv.html
 │   ├── Alper-Kulturel-CV.docx   # Word version, opens in Google Docs
 │   ├── favicon.svg              # five-bar folder mark
 │   └── og.png                   # 1200×630 social card
-├── tools/
-│   └── build_cv.py              # regenerates the two CV files above
 ├── robots.txt
 ├── sitemap.xml
 ├── .nojekyll               # disable Jekyll on GitHub Pages
@@ -162,26 +160,18 @@ Then update the count in three places: the `<dd class="meta__value">` for **File
 
 ## The CV files
 
-`assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.docx` are generated, not hand-written.
-The `cv.html` page offers both: the PDF downloads in one click, and the `.docx` is what Google Docs
-opens natively when uploaded. Keep the two in sync with the page when the CV changes.
+`assets/Alper-Kulturel-CV.pdf` and `assets/Alper-Kulturel-CV.docx` are the finalized CV documents,
+authored outside this repository. They are the source of truth for what a recruiter downloads, and
+`cv.html` mirrors them. The page offers both: the PDF downloads in one click, and the `.docx` is
+what Google Docs opens natively when uploaded.
 
-Both come from `tools/build_cv.py`, which holds the CV's content as plain Python data and writes
-into `assets/`. It is the only thing in this repository with dependencies — the site itself still
-has none. To regenerate after editing:
+Nothing in this repository generates them. A `tools/build_cv.py` script used to, but it has been
+retired — it carried an earlier CV's content, and running it would have silently overwritten the
+current files. If you change the CV, edit `cv.html` and replace both files together so the page and
+the downloads still agree.
 
-```bash
-python3 -m venv .venv-cv
-.venv-cv/bin/pip install reportlab python-docx
-.venv-cv/bin/python tools/build_cv.py
-```
-
-Two constraints live in that script, both explained in comments where they bite:
-
-- **The PDF must stay one page.** It is sized to fit A4 exactly. Adding a role, a bullet or a
-  project without removing something else will push `Technical Skills` onto a second sheet.
-- **Everything the PDF draws is HTML-escaped.** reportlab parses paragraph text as mini-HTML, so a
-  raw `&` — as in `P&L` — is read as the start of an entity and reaches the page as `P&L;`.
+The PDF is sized to fit A4 as **one page**. Adding a role, a bullet or a project means removing
+something else, or it spills onto a second sheet.
 
 ---
 

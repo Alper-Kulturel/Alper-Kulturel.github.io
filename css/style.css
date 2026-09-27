@@ -992,16 +992,6 @@ html.cursor-ready .cursor { opacity: 1; }
   color: var(--paper);
 }
 
-.page-sub {
-  margin-top: clamp(18px, 2.4vw, 28px);
-  font-family: var(--body);
-  font-style: italic;
-  font-size: clamp(19px, 2.1vw, 28px);
-  line-height: 1.45;
-  color: rgba(244, 239, 228, 0.8);
-  max-width: 46ch;
-}
-
 .dossier-section {
   position: relative;
   z-index: 1;
@@ -2327,7 +2317,6 @@ html.cursor-ready .cursor { opacity: 1; }
   .page-head { padding-top: 0 !important; padding-bottom: 16px !important; }
   .kicker { color: #444 !important; }
   .page-title { color: #000 !important; font-size: 34pt !important; line-height: 1 !important; }
-  .page-sub { color: #333 !important; font-size: 12pt !important; max-width: none; }
 
   .dossier-section { padding-bottom: 0 !important; }
   .dossier__back {
