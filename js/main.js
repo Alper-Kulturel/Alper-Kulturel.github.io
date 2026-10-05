@@ -576,6 +576,22 @@
     var buttons = document.querySelectorAll("[data-copy]");
     if (!buttons.length) return;
 
+    // Selecting the text so the person can copy it themselves. Used when the
+    // async clipboard API is absent, and also when it is present but refuses.
+    function legacyCopy(value) {
+      var scratch = document.createElement("textarea");
+      scratch.value = value;
+      scratch.setAttribute("readonly", "");
+      scratch.style.position = "fixed";
+      scratch.style.opacity = "0";
+      document.body.append(scratch);
+      scratch.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+      document.body.removeChild(scratch);
+      return ok;
+    }
+
     each(buttons, function (button) {
       var original = button.innerHTML;
 
@@ -595,23 +611,15 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(value).then(
             function () { done(true); },
-            function () { done(false); }
+            // writeText rejects on an insecure origin and when the permission
+            // is denied. This used to call done(false), which does nothing at
+            // all, so the button just looked broken with no way forward.
+            function () { done(legacyCopy(value)); }
           );
           return;
         }
 
-        // older browsers: select the text so the person can copy manually
-        var scratch = document.createElement("textarea");
-        scratch.value = value;
-        scratch.setAttribute("readonly", "");
-        scratch.style.position = "fixed";
-        scratch.style.opacity = "0";
-        document.body.append(scratch);
-        scratch.select();
-        var ok = false;
-        try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
-        document.body.removeChild(scratch);
-        done(ok);
+        done(legacyCopy(value));
       });
     });
   }
