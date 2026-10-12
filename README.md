@@ -1,10 +1,10 @@
 # Alper Kulturel
 
-Personal portfolio of **Alper Kulturel** — Financial Analyst with 2+ years in financial data
-analysis, performance reporting, and KPI-driven decision support. Based in Miami Beach,
-Florida.
+Personal portfolio of **Alper Kulturel** — business graduate with experience in business
+intelligence, data analysis, performance reporting, and strategic decision support. Based in Miami
+Beach, Florida.
 
-A static site built as an archive: five colour-coded folders, each opening into a dossier of real,
+A static site built as an archive: four colour-coded folders, each opening into a dossier of real,
 shipped work. Hand-written HTML, CSS, and JavaScript. **No frameworks, no build step, no npm, no
 dependencies** beyond the Google Fonts stylesheet.
 
@@ -15,11 +15,10 @@ dependencies** beyond the Google Fonts stylesheet.
 | File | Folder | Contents |
 | --- | --- | --- |
 | `index.html` | — | Hero, bio, folder cabinet, stats bar |
-| `quant.html` | 01 · `#1E40AF` | 7 files — derivatives pricing, risk simulation, backtesting |
-| `finance.html` | 02 · `#0F766E` | 5 files — credit risk, variance analysis, reporting pipelines |
-| `data.html` | 03 · `#B45309` | 3 files — churn modelling, segmentation, streaming ingestion |
-| `systems.html` | 04 · `#B91C1C` | 3 files — C++17 pricing, matching engine, feed handler |
-| `cv.html` | 05 · `#374151` | Curriculum vitae, with PDF / Google Docs download |
+| `finance.html` | 01 · `#0F766E` | 4 files — credit risk, variance analysis, reporting pipelines |
+| `data.html` | 02 · `#B45309` | 3 files — churn modelling, segmentation, streaming ingestion |
+| `business.html` | 03 · `#6D28D9` | 3 files — engagement profitability, market entry, process bottlenecks |
+| `cv.html` | 04 · `#374151` | Curriculum vitae, with PDF / Google Docs download |
 | `contact.html` | — | Contact form that composes a mailto to `kulturelalper@gmail.com` |
 
 Each folder page carries a **back button** at the top of the page head, a compact back arrow in the
@@ -73,11 +72,10 @@ same path structure, `python3 -m http.server 8000` is sufficient — there is no
 ```
 .
 ├── index.html              # homepage — hero, bio, cabinet, stats
-├── quant.html              # folder 01 — Quantitative Finance
-├── finance.html            # folder 02 — Financial Analytics
-├── data.html               # folder 03 — Data Analytics
-├── systems.html            # folder 04 — Systems & Infrastructure
-├── cv.html                 # folder 05 — Curriculum Vitae
+├── finance.html            # folder 01 — Financial Analytics
+├── data.html               # folder 02 — Data Analytics
+├── business.html           # folder 03 — Business Analytics
+├── cv.html                 # folder 04 — Curriculum Vitae
 ├── contact.html            # contact form
 ├── css/
 │   └── style.css           # the entire design system
@@ -103,8 +101,8 @@ Defined once as custom properties at the top of `css/style.css`.
 **Surfaces** — near-black `#0D0D0D`; off-white paper `#F4EFE4` with an inline SVG
 `feTurbulence` grain applied as an overlay.
 
-**Folders** — Quantitative Finance `#1E40AF`, Financial Analytics `#0F766E`, Data Analytics
-`#B45309`, Systems & Infrastructure `#B91C1C`, CV `#374151`. Category pages set
+**Folders** — Financial Analytics `#0F766E`, Data Analytics `#B45309`, Business Analytics `#6D28D9`,
+CV `#374151`. Category pages set
 `--accent`, `--accent-deep`, and `--accent-lift` via a `.page--*` class on `<body>`, which themes
 the drop cap, monogram badge, bullet dots, focus rings, folder cards, and footer background in one
 place. Changing a folder's colour means editing one line.

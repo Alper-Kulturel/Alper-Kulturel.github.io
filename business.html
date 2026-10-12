@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Systems &amp; Infrastructure — Alper Kulturel</title>
-<meta name="description" content="C++17 Black-Scholes pricing, a price-time priority matching engine, and a low-latency ITCH feed handler — systems and infrastructure projects by Alper Kulturel.">
+<title>Business Analytics — Alper Kulturel</title>
+<meta name="description" content="Engagement profitability, market entry sizing and process bottleneck analysis — three consulting-grade business analytics projects by Alper Kulturel.">
 <meta name="author" content="Alper Kulturel">
 <meta name="theme-color" content="#0D0D0D">
-<link rel="canonical" href="https://alper-kulturel.github.io/systems.html">
+<link rel="canonical" href="https://alper-kulturel.github.io/business.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alper Kulturel">
-<meta property="og:title" content="Systems &amp; Infrastructure — Alper Kulturel">
-<meta property="og:description" content="C++17 libraries and low-latency components — the layer the models run on.">
-<meta property="og:url" content="https://alper-kulturel.github.io/systems.html">
+<meta property="og:title" content="Business Analytics — Alper Kulturel">
+<meta property="og:description" content="Where margin leaks, whether a market is worth entering, and where a process breaks — answered with data.">
+<meta property="og:url" content="https://alper-kulturel.github.io/business.html">
 <meta property="og:image" content="https://alper-kulturel.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alper Kulturel — the portfolio archive.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Systems &amp; Infrastructure — Alper Kulturel">
-<meta name="twitter:description" content="C++17 libraries and low-latency components — the layer the models run on.">
+<meta name="twitter:title" content="Business Analytics — Alper Kulturel">
+<meta name="twitter:description" content="Where margin leaks, whether a market is worth entering, and where a process breaks — answered with data.">
 <meta name="twitter:image" content="https://alper-kulturel.github.io/assets/og.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -34,15 +34,15 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Systems & Infrastructure — Alper Kulturel",
-  "url": "https://alper-kulturel.github.io/systems.html",
-  "about": "Systems engineering projects: C++17 derivatives pricing, matching engine design, and low-latency market data parsing.",
+  "name": "Business Analytics — Alper Kulturel",
+  "url": "https://alper-kulturel.github.io/business.html",
+  "about": "Business analytics and consulting projects: engagement profitability, market entry analysis and operations bottleneck analysis.",
   "author": { "@type": "Person", "name": "Alper Kulturel", "url": "https://alper-kulturel.github.io/" }
 }
 </script>
 </head>
 
-<body class="page--folder page--systems">
+<body class="page--folder page--business">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -74,8 +74,8 @@
       </a>
     </div>
 
-    <p class="kicker">Folder 04 / 05</p>
-    <h1 class="page-title">Systems &amp;<br>Infrastructure</h1>
+    <p class="kicker">Folder 03 / 04</p>
+    <h1 class="page-title">Business<br>Analytics</h1>
   </header>
 
   <section class="dossier-section shell" aria-labelledby="dossier-label">
@@ -96,7 +96,7 @@
           </svg>
 
           <div class="paper__monogram" aria-hidden="true">AK</div>
-          <span class="paper__edge" aria-hidden="true">Folder 04 &mdash; Systems &amp; Infrastructure</span>
+          <span class="paper__edge" aria-hidden="true">Folder 03 &mdash; Business Analytics</span>
 
           <dl class="paper__meta">
             <div class="meta__item">
@@ -105,16 +105,16 @@
             </div>
             <div class="meta__item">
               <dt class="meta__label">Stack</dt>
-              <dd class="meta__value">C++17 &middot; CMake &middot; pybind11</dd>
+              <dd class="meta__value">Python &middot; pandas &middot; SQL &middot; Excel</dd>
             </div>
             <div class="meta__item">
               <dt class="meta__label">Focus</dt>
-              <dd class="meta__value">Latency &middot; Data Structures &middot; Parsing</dd>
+              <dd class="meta__value">Strategy &middot; Market Sizing &middot; Operations</dd>
             </div>
           </dl>
 
-          <p class="paper__lede">The models in the other folders assume the numbers arrive on time. These three projects are about earning that assumption. A dependency-free Black-Scholes library that prices a scalar option in 38.8 nanoseconds and binds cleanly into Python with pybind11, so the fast path and the readable path are the same code.</p>
-          <p class="paper__lede paper__lede--plain">The matching engine implements true price-time priority, holding O(log n) insertion and O(1) cancellation at roughly 67 nanoseconds per insert. The feed handler parses the ITCH binary protocol and is benchmarked at p50 and p99 rather than on averages, because tail latency is the number that actually breaks a trading system &mdash; and it ships with an ablation study showing which optimisations paid for themselves and which did not.</p>
+          <p class="paper__lede">This is the consulting shelf: three engagements taken from a business question to a costed recommendation. Each one starts with the decision someone has to make &mdash; where a firm&rsquo;s margin is leaking, whether a market is worth entering, which step in a process is the constraint &mdash; and ends with a number attached to the answer.</p>
+          <p class="paper__lede paper__lede--plain">Every project runs end to end on a seeded dataset: the pipeline executes, the charts are generated, and the findings in the README are the output of that run rather than a narrative written around it. The analysis is deliberately conservative &mdash; assumptions are stated, sensitivities are shown, and where two sizing methods disagree, both numbers are kept.</p>
 
           <div class="files">
 
@@ -124,36 +124,36 @@
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-black-scholes" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/engagement-profitability-analytics" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">cpp-black-scholes</span>
-                  <span class="file__stack">C++17 &middot; pybind11 &middot; CMake</span>
-                  <span class="file__desc">Dependency-free Black-Scholes library with Python bindings and a benchmarked 38.8 ns per scalar price.</span>
+                  <span class="file__title">engagement-profitability-analytics</span>
+                  <span class="file__stack">Python &middot; pandas &middot; SQL</span>
+                  <span class="file__desc">Decomposes a consulting firm&rsquo;s margin into discounts, write-offs, unbilled time and delivery cost, then sizes what recovery is worth.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-order-book" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/market-entry-analysis" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">cpp-order-book</span>
-                  <span class="file__stack">C++17 &middot; CMake</span>
-                  <span class="file__desc">Price-time priority matching engine with O(log n) add and O(1) cancel, measured at ~67 ns per insert.</span>
+                  <span class="file__title">market-entry-analysis</span>
+                  <span class="file__stack">Python &middot; pandas &middot; Scenario Modelling</span>
+                  <span class="file__desc">Triangulates TAM/SAM/SOM top-down and bottom-up, scores segment attractiveness, and returns a go/no-go with phased entry modes.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
             </div>
 
             <div class="file">
-              <a class="file__link" href="https://github.com/Alper-Kulturel/cpp-feed-handler" target="_blank" rel="noopener noreferrer">
+              <a class="file__link" href="https://github.com/Alper-Kulturel/operations-bottleneck-analysis" target="_blank" rel="noopener noreferrer">
                 <span class="file__dot" aria-hidden="true"></span>
                 <span class="file__body">
-                  <span class="file__title">cpp-feed-handler</span>
-                  <span class="file__stack">C++17 &middot; ITCH &middot; CMake</span>
-                  <span class="file__desc">Low-latency ITCH binary feed parser with p50/p99 benchmarks and an optimisation ablation study.</span>
+                  <span class="file__title">operations-bottleneck-analysis</span>
+                  <span class="file__stack">Python &middot; pandas &middot; Process Mining</span>
+                  <span class="file__desc">Mines a process event log to find the real constraint, then simulates the fixes and prices each one as an investment with a payback.</span>
                 </span>
                 <span class="file__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
               </a>
@@ -170,8 +170,8 @@
   <section class="next-folder shell" aria-label="Next folder">
     <a class="next-folder__link" href="cv.html" style="--next: var(--cv)">
       <span class="next-folder__text">
-        <span class="next-folder__kicker">Next folder &middot; 05 / 05</span>
-        <span class="next-folder__name">CV</span>
+        <span class="next-folder__kicker">Next folder &middot; 04 / 04</span>
+        <span class="next-folder__name">Curriculum Vitae</span>
       </span>
       <span class="next-folder__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
     </a>

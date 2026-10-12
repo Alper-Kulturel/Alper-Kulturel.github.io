@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      # Seven hand-maintained pages cross-reference each other; this catches a
+      # Six hand-maintained pages cross-reference each other; this catches a
       # renamed or deleted target before it reaches the deployed site.
       - name: Check internal links
         run: python3 tools/check_links.py --verbose

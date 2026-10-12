@@ -39,16 +39,15 @@
   --rule-ink: rgba(13, 13, 13, 0.14);
 
   /* folder palette */
-  --quant: #1e40af;
   --finance: #0f766e;
   --data: #b45309;
-  --systems: #b91c1c;
+  --business: #6d28d9;
   --cv: #374151;
 
   /* per-page accent — overridden by .page--* below */
-  --accent: #1e40af;
-  --accent-deep: #132b78;
-  --accent-lift: #2f57d4;
+  --accent: #0f766e;
+  --accent-deep: #0a4f4a;
+  --accent-lift: #17a394;
 
   /* type */
   --display: "Anton", "Arial Narrow", Impact, sans-serif;
@@ -70,10 +69,9 @@
 }
 
 /* per-category accent themes */
-.page--quant   { --accent: #1e40af; --accent-deep: #122a76; --accent-lift: #3059d6; }
-.page--finance { --accent: #0f766e; --accent-deep: #0a4f4a; --accent-lift: #17a394; }
-.page--data    { --accent: #b45309; --accent-deep: #7c3a06; --accent-lift: #d97706; }
-.page--systems { --accent: #b91c1c; --accent-deep: #7f1212; --accent-lift: #d93434; }
+.page--finance  { --accent: #0f766e; --accent-deep: #0a4f4a; --accent-lift: #17a394; }
+.page--data     { --accent: #b45309; --accent-deep: #7c3a06; --accent-lift: #d97706; }
+.page--business { --accent: #6d28d9; --accent-deep: #4c1d95; --accent-lift: #8b5cf6; }
 .page--cv      { --accent: #374151; --accent-deep: #222932; --accent-lift: #4d5a6d; }
 .page--contact { --accent: #374151; --accent-deep: #222932; --accent-lift: #4d5a6d; }
 
@@ -620,11 +618,10 @@ html.cursor-ready .cursor { opacity: 1; }
   100% { transform: translate3d(340%, 0, 0); opacity: 0; }
 }
 
-.folder--quant   { --folder: var(--quant); }
-.folder--finance { --folder: var(--finance); }
-.folder--data    { --folder: var(--data); }
-.folder--systems { --folder: var(--systems); }
-.folder--cv      { --folder: var(--cv); }
+.folder--finance  { --folder: var(--finance); }
+.folder--data     { --folder: var(--data); }
+.folder--business { --folder: var(--business); }
+.folder--cv       { --folder: var(--cv); }
 
 /* the manila tab, hanging from the top edge */
 .folder__tab {
